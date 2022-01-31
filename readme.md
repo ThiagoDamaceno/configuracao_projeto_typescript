@@ -13,6 +13,7 @@
 <br>
 
 <h4>2 - Criar arquivo package.json:</h4>
+
 ```
 yarn init -y
 ```
@@ -28,11 +29,13 @@ yarn init -y
 <br>
 
 <h4>4 - Iniciar o repositório git:</h4>
+
 ```
 git init
 ```
 
 <p>Criar arquivo .gitignore com os seguintes conteúdos:</p>
+
 ```
 node_modules
 *lock.json
@@ -43,16 +46,21 @@ node_modules
 <br>
 
 <h4>5 - Iniciar o projeto com typescript:</h4>
+
 ```
 yarn add typescript -D
 ```
+
 ```
 yarn add ts-node-dev -D
 ```
+
 ```
 yarn tsc --init
 ```
+
 <p>No arquivo tsconfig.json:</p>
+
 ```
 {
   "compilerOptions": {
@@ -70,12 +78,15 @@ yarn tsc --init
 <br>
 
 <h4>6 - Eslint:</h4>
+
 ```
 yarn add eslint -D
 ```
+
 ```
 yarn eslint --init
 ```
+
 <p>No terminal:</p>
 <ul>
   <li>To check syntax, find problems, and enforce code style</li>
@@ -91,6 +102,7 @@ yarn eslint --init
 </ul>
 
 <p>Nas configurações do vscode (ctrl + shift + p) settings.json, adicionar: </p>
+
 ```
 "editor.codeActionsOnSave": {
   "source.fixAll": true
@@ -100,6 +112,7 @@ yarn eslint --init
 <br>
 
 <h4>7 - Dependência do dotenv</h4>
+
 ```
 yarn add dotenv
 ```
@@ -109,6 +122,7 @@ yarn add dotenv
 <h4>8 - Rodar projeto:</h4>
 
 <p>No arquivo package.json, adicionar: </p>
+
 ```
 "scripts": {
   "dev": "ts-node-dev ./src/index.ts",
@@ -118,16 +132,19 @@ yarn add dotenv
 ```
 
 <p>Executar ambiente de desenvolvimento: </p>
+
 ```
 yarn dev
 ```
 
 <p>Gerar build de produção: </p>
+
 ```
 yarn build
 ```
 
 <p>Executar ambiente de produção: </p>
+
 ```
 yarn start
 ```
@@ -154,6 +171,7 @@ yarn add pg
 <br>
 
 <p>No arquivo .env (criar caso não exista). Na build para js, alterar o caminho das variáveis dos arquivos/diretórios: </p>
+
 ```
 TYPEORM_CONNECTION = postgres
 TYPEORM_HOST = localhost
@@ -171,6 +189,7 @@ TYPEORM_ENTITIES_DIR = ./src/models
 
 
 <p>No arquivo package.json, adicionar aos scripts: </p>
+
 ```
 "scripts": {
   "typeorm": "ts-node-dev node_modules/.bin/typeorm"
@@ -180,6 +199,7 @@ TYPEORM_ENTITIES_DIR = ./src/models
 <br>
 
 <p>No arquivo tsconfig.json, adicionar: </p>
+
 ```
 "emitDecoratorMetadata": true,
 "experimentalDecorators": true,
@@ -188,6 +208,7 @@ TYPEORM_ENTITIES_DIR = ./src/models
 <br>
 
 <p>Iniciar a conexão, em algum lugar do código</p>
+
 ```
 import { createConnection } from 'typeorm'
 createConnection()
@@ -214,6 +235,7 @@ services:
 <br>
 
 <p>No arquivo .env (podendo alterar o conteúdo das variáveis livremente), adicionar: </p>
+
 ```
 POSTGRES_DB = teste_postgres
 POSTGRES_USER = root
@@ -225,9 +247,11 @@ POSTGRES_HOST = localhost
 <br>
 
 <p>Criação do container do postgres, com terminal (Em linux, utilizar com sudo):</p>
+
 ```
 docker-compose up -d
 ```
+
 ```
 docker-compose down
 ```
