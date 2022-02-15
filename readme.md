@@ -125,7 +125,8 @@ yarn add dotenv
 
 ```
 "scripts": {
-  "dev": "ts-node-dev ./src/index.ts",
+  "dev": "ts-node-dev --transpile-only ./src/index.ts",
+  "dev-respawn": "ts-node-dev --poll --respawn --transpile-only --ignore-watch node_modules --no-notify ./src/index.ts",
   "build": "tsc",
   "start": "node ./dist/index.js"
 },
